@@ -27,16 +27,16 @@ svg {
     fill:#222222;
   }
   text.chart-label {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     fill: #999999;
   }
   text.chart-source {
-    font-size: 12px;
+    font-size: 14px;
     fill: #999999;
   }
   text.copyright {
-    font-size: 12px;
+    font-size: 14px;
     fill: #999999;
   }
   .tooltip {

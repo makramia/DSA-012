@@ -1,7 +1,7 @@
 function f5() {
   //set svg parameters
   const width = 900
-  const height = 400
+  const height = 350
 
   const svg = d3.select("#container5")
     .append("svg")
@@ -13,7 +13,7 @@ function f5() {
   const map_svg = d3.select("#map")
     .append("svg")
     .attr("width", "750")
-    .attr("height", "400")
+    .attr("height", "350")
     .attr("viewBox", "0 0  750 400")
     .attr("preserveAspectRatio", "xMinYMin");
 
@@ -247,7 +247,7 @@ function f5() {
         .data(legendLabel)
         .join("circle")
         .attr("cx", xCircle)
-        .attr("cy", d => height * 0.3 - size(d))
+        .attr("cy", d => height * 0.1 - size(d))
         .attr("r", d => size(d))
         .style("fill", "none")
         .attr("stroke", "#666666")
@@ -259,8 +259,8 @@ function f5() {
         .join("line")
         .attr('x1', xCircle)
         .attr('x2', xLabel)
-        .attr('y1', d => height * 0.3 - size(d) * 2)
-        .attr('y2', d => height * 0.3 - size(d) * 2)
+        .attr('y1', d => height * 0.1 - size(d) * 2)
+        .attr('y2', d => height * 0.1 - size(d) * 2)
         .attr('stroke', '#666666')
         .attr("stroke-width", 0.75);
 
@@ -269,7 +269,7 @@ function f5() {
         .data(legendLabel)
         .join("text")
         .attr('x', xLabel)
-        .attr('y', d => height * 0.3 - size(d) * 2)
+        .attr('y', d => height * 0.1 - size(d) * 2)
         .text(d => d3.format(",")(d))
         .style("font-size", 6)
         .style("fill", "#666666")
@@ -285,7 +285,8 @@ function f5() {
       .selectAll("path")
       .data(topojson.feature(topology, topology.objects.world_polygons_simplified).features)
       .join("path")
-      .attr("fill", "#CCCCCC")
+      //.attr("fill", "#CCCCCC")
+      .attr("fill","#808080")
       .attr("d", generator);
   });
 
@@ -307,20 +308,20 @@ function f5() {
   //set note
   svg
     .append('text')
-    .attr('class', 'note')
+    .attr('class', "chart-source")
     .attr('x', width * 0.01)
-    .attr('y', height * 0.40)
+    .attr('y', height * 0.15)
     .attr('text-anchor', 'start')
-    .style('font-size', 7)
+    .style('font-size', 14)
     .style("fill", "#666666")
     .text('Source: World Resources Institute');
   svg
     .append('text')
-    .attr('class', 'note')
+    .attr('class', "chart-source")
     .attr('x', width * 0.01)
-    .attr('y', height * 0.35)
+    .attr('y', height * 0.20)
     .attr('text-anchor', 'start')
-    .style('font-size', 7)
+    .style('font-size', 14)
     .style("fill", "#666666")
     .text("The boundaries and names shown and the designations used on this map do not imply official endorsement or acceptance by the United Nations.");
 }

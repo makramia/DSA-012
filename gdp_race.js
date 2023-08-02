@@ -1,10 +1,10 @@
 function f3() {
    const top_n = 20;
-   const height = 720;
-   const width = 1280;
+   const height = 620;
+   const width = 890;
 
-   const tickDuration = 500
-   const delayDuration = 500
+   const tickDuration = 750
+   const delayDuration = 750
 
    const yearStart = 1970;
    const yearEnd = 2022;
@@ -43,10 +43,11 @@ function f3() {
 
    svg.append('text')
       .attr('class', 'caption')
-      .attr('x', width)
+      .attr('x', width - margin.left - 30)
       .attr('y', height - 5)
       .style('text-anchor', 'end')
-      .html('Source: World Bank Data Catalog');
+      .html('Source: World Bank Data')
+      .style("font-size",14);
 
    let year = yearStart;
 
@@ -159,11 +160,14 @@ function f3() {
             .text(d => d.lastValue);
 
          let yearText = svg.append('text')
-            .attr('class', 'yearText')
-            .attr('x', width - margin.right)
+            .attr('x', width - margin.right - 40)
             .attr('y', height - 25)
+            .style('font-size', '48px')
+            .style('font-weight', 'bold')
             .style('text-anchor', 'end')
+            .style('fill', 'grey')
             .html(~~year);
+
 
          let ticker = d3.interval(e => {
 

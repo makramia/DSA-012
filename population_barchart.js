@@ -65,8 +65,8 @@ function f1() {
       .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom + 20 + "px")
-      .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      .append("g");
+      //.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     // Make x-axis and add to canvas
     var xAxis = d3.axisBottom()
@@ -187,8 +187,8 @@ function f1() {
     svg
       .append("text")
       .attr("class", "chart-source")
-      .attr("x", -(margin.left) * 0.9)
-      .attr("y", height + margin.bottom)
+      .attr("x", (margin.left) * 0.1 )
+      .attr("y", height + margin.bottom + 5)
       .attr("top-padding", 5 + "px")
       .attr("text-anchor", "start")
       .text("Source: World Bank Open Data")
@@ -197,8 +197,8 @@ function f1() {
     svg
       .append("text")
       .attr("class", "copyright")
-      .attr("x", -(margin.left) * 0.9)
-      .attr("y", height + margin.bottom + 10)
+      .attr("x", (margin.left) * 0.1)
+      .attr("y", height + margin.bottom + 15)
       .attr("top-padding", 5 + "px")
       .attr("text-anchor", "start")
       .text("© 2023 The World Bank Group.")
